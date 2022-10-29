@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#SBATCH --account=nn4654k
+#SBATCH --mail-type=None
+#SBATCH --job-name=pc2
+#SBATCH --output=pc2.log
+#SBATCH --error=pc2.err
+#SBATCH --time=00-24:00:00
+#SBATCH --ntasks=128
+#SBATCH --nodes=4
+
+module purge
+module load OpenMPI/4.1.1-GCC-10.3.0
+
+ORCA=$HOME/software/orca_5_0_2_linux_x86-64_shared_openmpi411
+MPI=/cluster/software/OpenMPI/4.1.1-GCC-10.3.0/lib
+
+export PATH=$PATH:$ORCA
+export PATH=$PATH:$MPI
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORCA
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MPI
+export RSH_COMMAND="/usr/bin/ssh -x"
+
+cp pc2.inp $SCRATCH
+cp valinomycine.xyz $SCRATCH
+cd $SCRATCH
+$ORCA/orca pc2.inp > pc2.out
+
+savefile pc2.out
+savefile *.hess
+savefile *.gbw
+savefile *.xyz
+
+exit 0

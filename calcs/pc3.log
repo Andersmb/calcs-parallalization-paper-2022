@@ -1,0 +1,40 @@
+Starting job 280238 on b[4260,4267-4269] at Thu Jan 20 15:04:02 CET 2022
+
+Copying pc3.out to /cluster/home/ambr/projects/peter/valinomycine_run
+Copying *.hess to /cluster/home/ambr/projects/peter/valinomycine_run
+rsync: link_stat "/cluster/work/jobs/280238/*.hess" failed: No such file or directory (2)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1178) [sender=3.1.2]
+Copying pc3.gbw to /cluster/home/ambr/projects/peter/valinomycine_run
+Copying valinomycine.xyz to /cluster/home/ambr/projects/peter/valinomycine_run
+
+Task and CPU usage stats:
+       JobID    JobName  AllocCPUS   NTasks     MinCPU MinCPUTask     AveCPU    Elapsed ExitCode 
+------------ ---------- ---------- -------- ---------- ---------- ---------- ---------- -------- 
+280238              pc3        512                                             16:23:19      0:0 
+280238.batch      batch        128        1 21-19:54:+          0 21-19:54:+   16:23:19      0:0 
+280238.exte+     extern        512        4   00:00:00          3   00:00:00   16:23:19      0:0 
+280238.0          orted        384        3   00:20:08          2   00:20:08   00:00:42      0:0 
+280238.1          orted        384        3 21-19:30:+          1 21-19:32:+   16:22:01      0:0 
+280238.2          orted        384        3   00:00:00          1   00:00:00   00:00:06      0:0 
+
+Memory usage stats:
+       JobID     MaxRSS MaxRSSTask     AveRSS MaxPages   MaxPagesTask   AvePages 
+------------ ---------- ---------- ---------- -------- -------------- ---------- 
+280238                                                                           
+280238.batch 159245291K          0 159245291K      138              0          0 
+280238.exte+       835K          3     853760        3              0          1 
+280238.0      58582912K          0  58567115K       93              2         91 
+280238.1     159435979K          2 159024820K       85              2         65 
+280238.2          1087K          1    1111722        0              1          0 
+
+Disk usage stats:
+       JobID  MaxDiskRead MaxDiskReadTask    AveDiskRead MaxDiskWrite MaxDiskWriteTask   AveDiskWrite 
+------------ ------------ --------------- -------------- ------------ ---------------- -------------- 
+280238                                                                                                
+280238.batch   346569.73M               0     346569.73M    45948.21M                0      45948.21M 
+280238.exte+        0.00M               3          0.00M            0                3              0 
+280238.0          128.27M               1        128.25M      262.60M                0        262.59M 
+280238.1       334625.22M               0     309737.35M      320.13M                0        278.94M 
+280238.2                0               1              0            0                1              0 
+
+Job 280238 completed at Fri Jan 21 07:27:24 CET 2022

@@ -1,0 +1,9 @@
+!rhf pc-3 nori defgrid3 verytightscf
+%pal nprocs 128 end
+%maxcore 5000
+
+%scf
+  maxiter 120
+end
+
+*xyzfile 0 1 valinomycine.xyz
